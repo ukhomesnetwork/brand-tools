@@ -1,0 +1,644 @@
+<title>Gatha Partners Licence 2027</title>
+<meta name="description" content="The 2027 Gatha Partners Licence. One licence per sector, twelve months on the platform built for UK property.">
+<style>
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-ExtraBold.woff2") format("woff2");font-weight:800;font-display:swap}
+
+/* Layout: a run of full-width "sheets" (one idea each, one PDF page each) on the Gatha night-sky ground.
+   Single dark theme by design: this is the live Gatha brand, it does not invert. */
+:root{
+  color-scheme:dark;
+  --void:#000321; --deep:#05071F; --panel:#0D1140; --panel-2:#12174D; --rim:#232852;
+  --pink:#E62B98; --pink-text:#EE4FA9; --pink-dark:#B31A74;
+  --blue:#3355E6; --blue-lite:#6E8CFF;
+  --text:#FFFFFF; --body:#C3C8E0; --muted:#9AA0BF;
+  --ui:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --wrap:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--void)}
+body{margin:0;background:var(--void);color:var(--body);font-family:var(--ui);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{margin:0;color:var(--text);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-.04em}
+h2{font-size:clamp(2rem,4.2vw,3.3rem);line-height:1.06}
+h3{font-size:1.25rem;line-height:1.25;font-weight:700;letter-spacing:-.015em}
+p{margin:0}
+.pink{color:var(--pink-text)}
+.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--body);max-width:60ch}
+.small{font-size:.86rem;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ground lighting */
+.sheet{position:relative;overflow:hidden;padding-block:clamp(72px,9vw,120px);padding-inline:clamp(16px,4vw,48px)}
+.sheet>.in{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto}
+.sheet--glow::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(55% 45% at 6% 0%,rgba(51,85,230,.20),transparent 62%),
+             radial-gradient(45% 40% at 98% 100%,rgba(230,43,152,.12),transparent 62%)}
+.sheet--panel{background:var(--deep)}
+.sheet+.sheet{border-top:1px solid rgba(255,255,255,.05)}
+
+/* heading with the small pink numeral, the house replacement for eyebrows */
+.head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-bottom:28px}
+.head__n{font-size:.95rem;font-weight:700;color:var(--pink-text);padding-top:.6em;font-variant-numeric:tabular-nums}
+.head>div{display:grid;gap:16px;min-width:0}
+
+/* ---------- cover ---------- */
+.cover{min-height:min(860px,100svh);display:flex;align-items:flex-end;padding-block:clamp(48px,7vw,88px)}
+.cover__bg{position:absolute;inset:0;z-index:0}
+.cover__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;opacity:.42}
+.cover__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,3,33,.55) 0%,rgba(0,3,33,.35) 35%,rgba(0,3,33,.92) 78%,var(--void) 100%),
+             linear-gradient(90deg,rgba(0,3,33,.85) 0%,rgba(0,3,33,0) 70%)}
+.cover__mark{position:absolute;right:-6%;top:50%;width:min(56vw,700px);transform:translateY(-50%);z-index:1;opacity:.9;pointer-events:none}
+.cover__mark path{fill:none;stroke:var(--pink);stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:0}
+.js .cover__mark path{animation:draw 2.8s var(--ease) both}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.cover .in{width:100%;display:grid;gap:28px}
+.cover__top{position:absolute;top:clamp(28px,4vw,48px);left:clamp(16px,4vw,48px);right:clamp(16px,4vw,48px);z-index:3;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.cover__top img{height:40px;width:auto}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:var(--text);
+  padding:8px 16px;border-radius:999px;background:rgba(13,17,64,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);backdrop-filter:blur(8px)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink)}
+.cover h1{max-width:13ch}
+.cover__meta{display:flex;gap:32px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);max-width:820px}
+.cover__meta div{display:grid;gap:2px}
+.cover__meta b{color:var(--text);font-size:1.05rem;font-weight:700}
+.cover__meta span{font-size:.85rem;color:var(--muted)}
+
+/* ---------- letter ---------- */
+.letter{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,80px);align-items:center}
+.letter figure{margin:0;position:relative}
+.letter figure img{border-radius:24px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.letter figcaption{margin-top:12px;font-size:.85rem;color:var(--muted)}
+.letter__body{display:grid;gap:18px}
+.letter__body p{max-width:58ch}
+.letter__body .lead{font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.45;color:var(--text);font-weight:500;letter-spacing:-.01em}
+.sign{display:grid;gap:2px;padding-top:8px}
+.sign b{color:var(--text);font-size:1.1rem}
+
+/* ---------- problem / platform ---------- */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px);align-items:start}
+.prose{display:grid;gap:16px;max-width:60ch}
+.prose strong{color:var(--text)}
+.contrast{display:grid;gap:12px}
+.contrast__row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim)}
+.contrast__row>div{padding:16px 20px;font-size:.95rem;min-width:0}
+.contrast__row>div:first-child{color:var(--muted);border-right:1px solid var(--rim)}
+.contrast__row>div:last-child{color:var(--text);font-weight:500}
+.contrast__h{display:grid;grid-template-columns:1fr 1fr;font-size:.85rem;font-weight:600;padding-inline:20px;color:var(--muted)}
+.contrast__h span:last-child{color:var(--pink-text);padding-left:20px}
+
+.platform{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,5vw,72px);align-items:center}
+.phones{display:flex;gap:18px;align-items:flex-end}
+.phone{width:clamp(150px,17vw,220px);border-radius:30px;padding:8px;background:#0a0d33;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.14),0 30px 70px rgba(0,0,0,.6),0 10px 50px rgba(51,85,230,.18)}
+.phone img{border-radius:23px;aspect-ratio:668/1300;object-fit:cover;width:100%}
+.phone:nth-child(2){transform:translateY(-36px)}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+.feat{padding:18px 20px;border-radius:18px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim);display:grid;gap:4px;min-width:0}
+.feat b{color:var(--text);font-weight:700}
+.feat span{font-size:.92rem}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
+.stat{padding:22px 22px 20px;border-top:2px solid var(--pink);display:grid;gap:4px;background:linear-gradient(180deg,rgba(230,43,152,.08),transparent)}
+.stat b{font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1;color:var(--text);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat span{font-size:.88rem;color:var(--muted)}
+
+/* audience chips */
+.roles{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.roles span{padding:9px 16px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--text);background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--rim)}
+.roles span.hot{background:rgba(230,43,152,.14);box-shadow:inset 0 0 0 1px rgba(230,43,152,.5)}
+
+/* ---------- teach ---------- */
+.teach{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.series{position:relative;border-radius:26px;padding:clamp(24px,3vw,36px);background:linear-gradient(160deg,var(--panel-2),var(--panel));box-shadow:inset 0 0 0 1px var(--rim),0 30px 80px rgba(0,0,0,.5)}
+.series__title{display:grid;gap:4px;margin-bottom:22px}
+.series__title small{font-size:.85rem;color:var(--muted)}
+.series__title b{font-size:1.45rem;color:var(--text);letter-spacing:-.02em;line-height:1.2}
+.series__title b em{font-style:normal;color:var(--pink-text)}
+.qs{display:grid;gap:10px}
+.q{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;background:rgba(0,3,33,.5);box-shadow:inset 0 0 0 1px var(--rim)}
+.q__n{font-weight:800;color:var(--pink-text);font-size:1.1rem;font-variant-numeric:tabular-nums}
+.q__t{color:var(--text);font-weight:600;font-size:.95rem;min-width:0}
+.q__t span{display:block;color:var(--muted);font-weight:400;font-size:.82rem}
+.q__s{font-size:.78rem;font-weight:600;color:var(--text);padding:5px 10px;border-radius:999px;background:var(--panel-2);white-space:nowrap}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}
+.flow span{font-size:.78rem;text-align:center;padding:8px 6px;border-radius:10px;background:rgba(51,85,230,.14);color:var(--text);font-weight:500}
+
+/* ---------- included ---------- */
+.inc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.col{border-radius:22px;padding:26px 24px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim);display:grid;align-content:start;gap:18px;min-width:0}
+.col--hero{background:linear-gradient(170deg,rgba(230,43,152,.18),var(--panel) 55%);box-shadow:inset 0 0 0 1px rgba(230,43,152,.45)}
+.col h3{display:flex;align-items:baseline;gap:10px}
+.col h3 small{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:0}
+.col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.col li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline;font-size:.93rem;line-height:1.45}
+.col li b{color:var(--text);font-weight:600}
+.qty{font-weight:800;color:var(--pink-text);font-variant-numeric:tabular-nums;font-size:1.05rem;text-align:right}
+.qty--on{font-size:.7rem;font-weight:700;color:var(--text);background:var(--pink);border-radius:6px;padding:2px 6px;text-align:center;justify-self:end;letter-spacing:.02em}
+.sla{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.sla div{padding:14px 18px;border-radius:14px;background:rgba(13,17,64,.6);box-shadow:inset 0 0 0 1px var(--rim);display:grid;gap:2px;min-width:0}
+.sla b{color:var(--text);font-size:1.05rem}
+.sla span{font-size:.82rem;color:var(--muted)}
+
+/* ---------- year ---------- */
+.year{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px;margin-top:8px}
+.m{position:relative;border-radius:14px;padding:14px 10px 16px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim);display:grid;align-content:start;gap:10px;min-height:250px;min-width:0}
+.m__n{font-size:.75rem;color:var(--muted);font-weight:600}
+.m__n b{display:block;font-size:1.35rem;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
+.m ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.m li{font-size:.72rem;line-height:1.3;padding:5px 7px;border-radius:7px;background:rgba(255,255,255,.06);color:var(--text)}
+.m li.w{background:var(--pink);font-weight:600}
+.m li.e{background:rgba(51,85,230,.35)}
+.m li.r{background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);color:var(--body)}
+.m--q{box-shadow:inset 0 0 0 1px rgba(230,43,152,.45)}
+.key{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:.82rem;color:var(--muted)}
+.key span{display:inline-flex;gap:8px;align-items:center}
+.key i{width:12px;height:12px;border-radius:4px;display:inline-block}
+
+/* ---------- seat board ---------- */
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:8px}
+.seat{position:relative;border-radius:20px;padding:20px 18px;min-height:190px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;min-width:0}
+.seat__sector{font-size:1rem;font-weight:700;color:var(--text);line-height:1.25;letter-spacing:-.01em}
+.seat__state{font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.seat--taken{background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim)}
+.seat--taken .seat__state{color:var(--muted)}
+.seat--taken .seat__state i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.logos{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;align-content:center}
+.logos img{height:var(--h,24px);width:auto;max-width:100%;opacity:.9;filter:brightness(0) invert(1)}
+.logos img.boxed{background:#fff;border-radius:6px;padding:4px 6px}
+.seat--open{background:radial-gradient(120% 90% at 0% 0%,rgba(230,43,152,.28),rgba(13,17,64,.9) 60%);box-shadow:inset 0 0 0 1.5px var(--pink),0 18px 50px rgba(230,43,152,.18)}
+.seat--open .seat__state{color:var(--text)}
+.seat--open .seat__state i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}
+.js .seat--open .seat__state i{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,43,152,.7)}50%{box-shadow:0 0 0 7px rgba(230,43,152,0)}}
+.seat--open .seat__who{font-size:.86rem;color:var(--body);line-height:1.4}
+.seat--open .seat__who b{color:var(--text);font-weight:600}
+.board-note{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.board-note div{font-size:.92rem;padding-left:16px;border-left:2px solid var(--pink)}
+.board-note b{color:var(--text);display:block}
+
+/* ---------- price ---------- */
+.price{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.ticket{position:relative;border-radius:28px;padding:clamp(28px,4vw,48px);background:linear-gradient(150deg,#1a1f63 0%,var(--panel) 50%,#2a0f4d 100%);
+  box-shadow:inset 0 0 0 1.5px rgba(230,43,152,.5),0 40px 100px rgba(0,0,0,.55),0 20px 80px rgba(230,43,152,.15);display:grid;gap:22px;overflow:hidden}
+.ticket::after{content:"";position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(230,43,152,.35),transparent 65%)}
+.ticket__amt{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ticket__amt b{font-size:clamp(3.6rem,8vw,6rem);line-height:.9;color:var(--text);font-weight:800;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.ticket__amt span{font-size:1.1rem;color:var(--body);font-weight:500}
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;position:relative;z-index:1}
+.terms div{display:grid;gap:2px;padding-top:12px;border-top:1px solid rgba(255,255,255,.14)}
+.terms b{color:var(--text);font-size:.98rem}
+.terms span{font-size:.85rem;color:var(--muted)}
+.perk{border-radius:24px;padding:clamp(24px,3vw,34px);background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim);display:grid;gap:16px;align-content:start}
+.rate{display:grid;gap:8px}
+.rate__row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rim);font-size:.95rem}
+.rate__row s{color:var(--muted)}
+.rate__row b{color:var(--text);font-size:1.1rem;font-variant-numeric:tabular-nums}
+.dates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.dates div{font-size:.85rem;padding:10px 12px;border-radius:12px;background:rgba(0,3,33,.5);box-shadow:inset 0 0 0 1px var(--rim);min-width:0}
+.dates b{display:block;color:var(--text)}
+
+/* ---------- proof ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.quote{border-radius:22px;padding:26px 24px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim);display:grid;gap:18px;align-content:space-between;min-width:0}
+.quote blockquote{margin:0;color:var(--text);font-size:1.02rem;line-height:1.5;font-weight:500}
+.quote--slot blockquote{color:var(--pink-text);font-weight:500;font-size:.95rem}
+.quote cite{font-style:normal;display:flex;align-items:center;gap:14px;font-size:.85rem;color:var(--muted)}
+.quote cite img{height:22px;width:auto;filter:brightness(0) invert(1);opacity:.85}
+.quote cite b{display:block;color:var(--text);font-size:.92rem}
+.awards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr);gap:16px;margin-top:16px}
+.award{border-radius:22px;padding:24px;display:grid;gap:6px;align-content:end;background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--rim);min-width:0}
+.award b{font-size:2.2rem;line-height:1;color:var(--pink-text);font-weight:800;letter-spacing:-.03em}
+.award h3{font-size:1.05rem}
+.award--img{padding:0;overflow:hidden;position:relative;min-height:200px}
+.award--img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+
+/* ---------- claim ---------- */
+.claim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:start;padding:18px 20px;border-radius:18px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--rim)}
+.steps li::before{counter-increment:s;content:counter(s);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--pink);color:#fff;font-weight:800}
+.steps b{color:var(--text);display:block}
+.steps span{font-size:.92rem}
+.contact{display:grid;gap:14px;padding:clamp(24px,3vw,34px);border-radius:26px;background:linear-gradient(160deg,var(--panel-2),var(--panel));box-shadow:inset 0 0 0 1.5px rgba(230,43,152,.45)}
+.contact__p{display:flex;gap:16px;align-items:center}
+.contact__p img{width:72px;height:72px;border-radius:50%;object-fit:cover}
+.contact__p b{color:var(--text);font-size:1.15rem;display:block}
+.line{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;border-radius:14px;background:rgba(0,3,33,.55);box-shadow:inset 0 0 0 1px var(--rim)}
+.line span{color:var(--text);font-weight:600;font-size:1.02rem;user-select:all;overflow-wrap:anywhere;min-width:0}
+.line small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+.copy{font:inherit;font-size:.82rem;font-weight:600;color:#fff;background:var(--pink);border:0;border-radius:999px;padding:8px 16px;cursor:pointer;transition:background .2s}
+.copy:hover{background:var(--pink-dark)}
+.copy:focus-visible,.tag:focus-visible{outline:2px solid var(--blue-lite);outline-offset:3px}
+.end{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;margin-top:64px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:var(--muted)}
+.end img{height:30px;width:auto}
+
+/* rise in from a visible resting state */
+.js .rise{animation:rise .9s var(--ease) both}
+@keyframes rise{from{opacity:.001;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+@media (max-width:1060px){
+  .inc,.quotes{grid-template-columns:1fr}
+  .board{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .year{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .m{min-height:0}
+  .sla,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .letter,.two,.platform,.teach,.price,.claim{grid-template-columns:1fr}
+  .awards{grid-template-columns:1fr 1fr}
+  .award--img{grid-column:1/-1}
+  .board-note{grid-template-columns:1fr}
+  .phones{justify-content:center}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .board,.year,.feats,.terms,.dates{grid-template-columns:1fr 1fr}
+  .board .seat{min-height:160px}
+  .year{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sla,.stats{grid-template-columns:1fr 1fr}
+  .phone{width:44%}.phones{gap:10px}.phone:nth-child(2){transform:translateY(-20px)}.phone:nth-child(3){display:none}
+  .contrast__row{grid-template-columns:1fr}.contrast__row>div:first-child{border-right:0;border-bottom:1px solid var(--rim)}
+  .contrast__h{display:none}
+  .awards{grid-template-columns:1fr}
+  .head{grid-template-columns:1fr;gap:6px}.head__n{padding-top:0}
+  .cover__mark{width:110vw;right:-40%;opacity:.45}
+  .terms{grid-template-columns:1fr}
+}
+@media (max-width:420px){.board,.feats,.dates{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.js .rise,.js .cover__mark path,.js .seat--open .seat__state i{animation:none}}
+
+/* ---------- PDF: one sheet per 1440x900 page ---------- */
+@page{size:1440px 900px;margin:0}
+@media print{
+  html,body{background:var(--void);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{height:900px;min-height:900px;padding-block:52px;padding-inline:64px;break-after:page;display:flex;flex-direction:column;justify-content:center}
+  .sheet>.in{width:100%}
+  .sheet+.sheet{border-top:0}
+  .cover{justify-content:flex-end}
+  .copy{display:none}
+  .js .rise,.js .cover__mark path{animation:none}
+  .end{margin-top:40px}
+  .letter figure img{max-height:640px}
+  .phone{width:190px}
+  .phones{gap:16px}
+  .stats{margin-top:28px}
+  .stat{padding:16px 18px}
+  #audience figure img{max-height:520px}
+  .platform .sub{max-width:56ch}
+  #gatha .head{margin-bottom:16px}
+  #gatha .feats{margin-top:14px;gap:10px}
+  #gatha .feat{padding:12px 16px}
+  #gatha .stats{margin-top:20px}
+}
+</style>
+
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
+
+<!-- ============ COVER ============ -->
+<section class="sheet cover" id="top">
+  <div class="cover__bg"><img src="img/leeds-2026-gatha-wall.jpg" alt="" width="1600" height="900"></div>
+  <svg class="cover__mark" viewBox="0 0 254.7 254.7" aria-hidden="true"><path pathLength="1" d="M239.56,90.8L163.9,15.14c-20.19-20.19-52.91-20.19-73.1,0L15.14,90.8c-20.19,20.19-20.19,52.91,0,73.1l75.66,75.66c20.19,20.19,52.91,20.19,73.1,0l75.66-75.66c20.19-20.19,20.19-52.91,0-73.1ZM224.52,140.17l-10.4,10.4c-2.26,2.26-5.26,3.5-8.45,3.5s-6.19-1.24-8.45-3.5l-3.37-3.37c-1.65-1.65-2.56-3.84-2.56-6.17s.91-4.52,2.56-6.17l3.12-3.12c2.67-2.67,2.67-7.01,0-9.68l-18.86-18.86c-1.44-1.44-3.36-2.23-5.39-2.23s-3.95.79-5.39,2.23l-2.56,2.56c-1.65,1.65-3.84,2.56-6.17,2.56s-4.52-.91-6.17-2.56l-5.65-5.65c-3.4-3.4-3.4-8.94,0-12.35l3.56-3.56c2.42-2.42,2.42-6.37,0-8.79l-16.28-16.28c-2-2-4.65-3.1-7.48-3.1s-5.48,1.1-7.48,3.1l-60.45,60.45c-1.95,1.95-3.03,4.55-3.03,7.31s1.08,5.36,3.03,7.31l60.28,60.28c2.04,2.04,4.76,3.17,7.66,3.17s5.61-1.13,7.65-3.17l6.72-6.72c1.92-1.92,2.98-4.47,2.98-7.18s-1.06-5.26-2.98-7.18l-32.12-32.12c-4.3-4.3-4.3-11.29,0-15.58l2.11-2.11c2.16-2.16,5.04-3.35,8.1-3.35s5.94,1.19,8.1,3.35l38.57,38.57c.14.14.31.17.42.17s.28-.03.42-.17c1.65-1.65,3.84-2.56,6.17-2.56s4.52.91,6.17,2.56l3.22,3.22c2.3,2.3,3.56,5.35,3.56,8.61s-1.27,6.31-3.56,8.6l-40.07,40.07c-4.13,4.13-9.62,6.41-15.47,6.41s-11.34-2.28-15.47-6.41L31.31,142.89c-4.27-4.27-6.63-9.95-6.63-15.99s2.35-11.72,6.63-15.99L109.52,32.69c4.55-4.55,10.6-7.05,17.03-7.05s12.48,2.51,17.03,7.05l32,32,12.24,12.24,36.7,36.69c3.55,3.55,5.5,8.26,5.5,13.27s-1.95,9.73-5.5,13.27Z"/></svg>
+  <div class="cover__top">
+    <img src="img/gatha-lockup-white.svg" alt="Gatha" width="132" height="40">
+    <span class="tag"><i></i>Partners Licence 2027</span>
+  </div>
+  <div class="in">
+    <h1 class="rise">One licence per sector. <span class="pink">Yours, or theirs.</span></h1>
+    <p class="sub rise" style="animation-delay:.12s">Twelve months in front of the UK's verified property professionals, on the platform built for the industry. One firm per sector. When a sector is signed, it closes.</p>
+    <div class="cover__meta rise" style="animation-delay:.24s">
+      <div><b>3,000+</b><span>Verified members</span></div>
+      <div><b>£5,000 + VAT</b><span>Twelve months from payment</span></div>
+      <div><b>4 sectors open</b><span>At the time of writing</span></div>
+      <div><b>Chris Tremlett</b><span>Co-founder, prepared by</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LETTER ============ -->
+<section class="sheet sheet--glow" id="letter">
+  <div class="in letter">
+    <figure class="rise">
+      <img src="img/founders-2026.jpg" alt="Chris and David Tremlett" width="1000" height="1250">
+      <figcaption>Chris and David Tremlett, founders of Gatha.</figcaption>
+    </figure>
+    <div class="letter__body rise">
+      <p class="lead">People only do business with their friends. Not their contacts, not their prospects. Their friends.</p>
+      <p>David and I started this company in January 2024 because property, one of Britain's biggest industries, had nowhere of its own online. The platform came first. Members met each other in the app and asked us for a reason to meet in person, so we built the events. Two industry awards later, we have rebuilt the whole thing from the ground up as Gatha, on our own infrastructure, owned outright.</p>
+      <p>The Partners Licence is how a business gets to be one of those friends at scale. Not with banner ads. By teaching. Your people on a named webinar series, your firm in every new member's first session, your posts in a feed that has no algorithm deciding who sees them.</p>
+      <p>There is one licence per sector. I would rather tell you that now than have you find out a competitor signed first.</p>
+      <div class="sign"><b>Chris Tremlett</b><span class="small">Co-founder, UK Homes Network Limited, trading as Gatha</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sheet sheet--panel" id="why">
+  <div class="in">
+    <div class="head rise"><span class="head__n">01</span><div>
+      <h2>Your buyers are online. <span class="pink">Your posts are not reaching them.</span></h2>
+    </div></div>
+    <div class="two">
+      <div class="prose rise">
+        <p>On the platforms property people use every day, the industry sits somewhere between recruitment and lifestyle content. The surveyor with twenty years of judgment gets the same reach as a viral post about a kitchen. The developer looking for a specialist finds whoever paid the most.</p>
+        <p><strong>Gatha fixes that for one industry.</strong> Verified property professionals only. No algorithm in between. Post to the feed and the feed sees it.</p>
+        <p>For a business that sells expertise to developers, landlords and investors, that changes the maths. You are not competing with influencers for attention. You are one of a small number of named partners in a room built for your buyers.</p>
+      </div>
+      <div class="contrast rise">
+        <div class="contrast__h"><span>Everywhere else</span><span>On Gatha</span></div>
+        <div class="contrast__row"><div>Anyone can join. Your audience is diluted by every other industry.</div><div>Every member verified as a UK property professional.</div></div>
+        <div class="contrast__row"><div>An algorithm decides who sees your post.</div><div>No algorithm. The feed is the feed.</div></div>
+        <div class="contrast__row"><div>You pay to reach people who scroll past.</div><div>You teach people who signed up to learn.</div></div>
+        <div class="contrast__row"><div>Your competitors sit next to you in every sidebar.</div><div>One licensed partner per sector.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORM ============ -->
+<section class="sheet sheet--glow" id="gatha">
+  <div class="in">
+    <div class="platform">
+      <div>
+        <div class="head rise"><span class="head__n">02</span><div>
+          <h2>Gatha goes live on 19 November. <span class="pink">Partners go live with it.</span></h2>
+          <p class="sub">Built in house, on our own infrastructure. Gatha launches on the App Store and Google Play at Gatha LIVE London, replacing the UK Homes Network app the industry has used since 2024.</p>
+        </div></div>
+        <div class="feats rise">
+          <div class="feat"><b>Feed</b><span>Posts, updates and market talk from verified professionals.</span></div>
+          <div class="feat"><b>Projects</b><span>Members post live schemes and what they need to deliver them.</span></div>
+          <div class="feat"><b>Jobs</b><span>Developers and landlords hire trades and specialists directly.</span></div>
+          <div class="feat"><b>Companies</b><span>Every business has a page. Partners get the front row.</span></div>
+        </div>
+      </div>
+      <div class="phones rise" aria-hidden="true">
+        <div class="phone"><img src="img/gatha-screen-feed.jpg" alt="" width="668" height="1300"></div>
+        <div class="phone"><img src="img/gatha-screen-project.jpg" alt="" width="668" height="1300"></div>
+        <div class="phone"><img src="img/gatha-screen-profile.jpg" alt="" width="668" height="1300"></div>
+      </div>
+    </div>
+    <div class="stats rise">
+      <div class="stat"><b>3,000+</b><span>Verified members</span></div>
+      <div class="stat"><b>2</b><span>Industry awards in 2026</span></div>
+      <div class="stat"><b>6</b><span>Gatha LIVE and Social nights in 2027</span></div>
+      <div class="stat"><b>2024</b><span>Founded, and owned by its founders</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE ============ -->
+<section class="sheet sheet--panel" id="audience">
+  <div class="in two" style="align-items:center">
+    <div>
+      <div class="head rise"><span class="head__n">03</span><div>
+        <h2>Who you reach. <span class="pink">The people who commission the work.</span></h2>
+        <p class="sub">Gatha is built around the people who buy professional services in property: the ones who need a surveyor next month, a QS on the next scheme, an accountant who understands SPVs, an architect who has dealt with their planning authority.</p>
+      </div></div>
+      <div class="roles rise">
+        <span class="hot">Property developers</span><span class="hot">Landlords</span><span class="hot">Property investors</span><span class="hot">House builders</span>
+        <span>Architects</span><span>Surveyors</span><span>Brokers</span><span>Agents</span><span>Trades</span><span>Suppliers</span><span>PropTech</span>
+      </div>
+    </div>
+    <figure class="rise" style="margin:0">
+      <img src="img/manchester-2026-crowd.jpg" alt="The room at UK Homes Network LIVE Manchester" width="1400" height="933" style="border-radius:24px;aspect-ratio:4/3;object-fit:cover;width:100%">
+      <figcaption class="small" style="margin-top:12px">The same audience in person, Manchester 2026. Online, they are on Gatha the other 364 days.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ TEACH ============ -->
+<section class="sheet sheet--glow" id="teach">
+  <div class="in teach">
+    <div>
+      <div class="head rise"><span class="head__n">04</span><div>
+        <h2>The firms that win here <span class="pink">teach.</span></h2>
+        <p class="sub">Property people do not buy expertise from an advert. They buy it from the person who explained their problem better than anyone else. The licence is built for service firms that can do that.</p>
+      </div></div>
+      <div class="prose rise">
+        <p>At the centre of every licence is <strong>your own named webinar series</strong>, one session a quarter, dated before the year starts. Your people, your subject, our audience. We host it, promote it, record it, edit it, publish it to YouTube and list it on demand in the app.</p>
+        <p>A series compounds where one-off sessions do not. Every quarter's attendees are the warmest list for the next. By the end of the year your firm is the one the industry checks in with, and the platform holds a library of your expertise that keeps working after the night.</p>
+      </div>
+    </div>
+    <div class="series rise" aria-label="Example webinar series">
+      <div class="series__title"><small>Example, for a surveying practice</small><b>The <em>[Your firm]</em> Quarterly</b></div>
+      <div class="qs">
+        <div class="q"><span class="q__n">Q1</span><span class="q__t">Spring valuation outlook<span>What lenders are asking for this year</span></span><span class="q__s">Live + replay</span></div>
+        <div class="q"><span class="q__n">Q2</span><span class="q__t">Buying a block without the surprises<span>Condition, compliance and cost</span></span><span class="q__s">Live + replay</span></div>
+        <div class="q"><span class="q__n">Q3</span><span class="q__t">Retrofit and EPCs<span>What a landlord needs to budget</span></span><span class="q__s">Live + replay</span></div>
+        <div class="q"><span class="q__n">Q4</span><span class="q__t">The year in reports<span>What we saw on site in 2027</span></span><span class="q__s">Live + replay</span></div>
+      </div>
+      <div class="flow"><span>Promoted in app</span><span>Hosted live</span><span>On YouTube</span><span>On demand</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUDED ============ -->
+<section class="sheet sheet--panel" id="included">
+  <div class="in">
+    <div class="head rise"><span class="head__n">05</span><div>
+      <h2>What the licence includes. <span class="pink">All of it, for twelve months.</span></h2>
+    </div></div>
+    <div class="inc">
+      <div class="col col--hero rise">
+        <h3>Teach <small>Your expertise, on a schedule</small></h3>
+        <ul>
+          <li><span class="qty">4</span><span><b>Named quarterly webinars,</b> your own series, hosted, recorded and listed on demand</span></li>
+          <li><span class="qty">3</span><span><b>Solus emails</b> to the full member database, your message only</span></li>
+          <li><span class="qty">4</span><span><b>Sponsored posts</b> in the feed, written with us or supplied by you</span></li>
+          <li><span class="qty">4</span><span><b>Bespoke push notifications</b> to promote a service, a session or a campaign</span></li>
+          <li><span class="qty">1</span><span><b>Partner announcement</b> in the app and on our external social channels</span></li>
+        </ul>
+      </div>
+      <div class="col rise">
+        <h3>Be there <small>Always on, all year</small></h3>
+        <ul>
+          <li><span class="qty qty--on">ON</span><span><b>Company page</b> with posting and scheduling rights</span></li>
+          <li><span class="qty qty--on">ON</span><span><b>Onboarding presence.</b> Every new member meets your firm in their first session</span></li>
+          <li><span class="qty qty--on">ON</span><span><b>Rotating banner</b> in the member feed between campaigns</span></li>
+          <li><span class="qty qty--on">ON</span><span><b>Partner directory</b> listing on gatha.uk and in the app</span></li>
+          <li><span class="qty">5</span><span><b>Gatha Pro seats</b> for your team</span></li>
+        </ul>
+      </div>
+      <div class="col rise">
+        <h3>Be looked after <small>So nothing goes unused</small></h3>
+        <ul>
+          <li><span class="qty qty--on">DAY 1</span><span><b>Dated activity calendar.</b> Every entitlement has a month before we start</span></li>
+          <li><span class="qty">4</span><span><b>Quarterly strategy sessions</b> with Chris and the team</span></li>
+          <li><span class="qty">4</span><span><b>Written performance reports.</b> Webinars, replays, email, posts. Sent, not requested</span></li>
+          <li><span class="qty qty--on">ON</span><span><b>Partner analytics.</b> Reach, profile views and engagement</span></li>
+          <li><span class="qty qty--on">ON</span><span><b>Support</b> by email and phone, Monday to Friday, 9am to 5pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sla rise">
+      <div><b>1 working day</b><span>Platform support response</span></div>
+      <div><b>3 to 5 working days</b><span>Campaign requests turned round</span></div>
+      <div><b>2 weeks</b><span>Webinar lead time, speaker to promotion</span></div>
+      <div><b>99.5%</b><span>Platform uptime, excluding planned maintenance</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YEAR ============ -->
+<section class="sheet sheet--glow" id="year">
+  <div class="in">
+    <div class="head rise"><span class="head__n">06</span><div>
+      <h2>Your year on Gatha. <span class="pink">Planned before it starts.</span></h2>
+      <p class="sub">Months count from the day your licence starts. The calendar moves to fit your own campaigns. Nothing waits for someone to remember it.</p>
+    </div></div>
+    <div class="year rise">
+      <div class="m"><span class="m__n">Month<b>1</b></span><ul><li class="r">Strategy session</li><li>Calendar signed off</li><li>Partner announcement</li><li>Live in onboarding</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>2</b></span><ul><li>Sponsored post</li></ul></div>
+      <div class="m m--q"><span class="m__n">Month<b>3</b></span><ul><li class="w">Webinar 1</li><li class="e">Solus email</li><li>Push</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>4</b></span><ul><li class="r">Report + session</li><li>Sponsored post</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>5</b></span><ul><li>Push</li></ul></div>
+      <div class="m m--q"><span class="m__n">Month<b>6</b></span><ul><li class="w">Webinar 2</li><li class="e">Solus email</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>7</b></span><ul><li class="r">Report + session</li><li>Sponsored post</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>8</b></span><ul><li>Push</li></ul></div>
+      <div class="m m--q"><span class="m__n">Month<b>9</b></span><ul><li class="w">Webinar 3</li><li class="e">Solus email</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>10</b></span><ul><li class="r">Report + session</li><li>Sponsored post</li></ul></div>
+      <div class="m"><span class="m__n">Month<b>11</b></span><ul><li>Push</li></ul></div>
+      <div class="m m--q"><span class="m__n">Month<b>12</b></span><ul><li class="w">Webinar 4</li><li class="r">Full-year report</li><li class="r">Renewal review</li></ul></div>
+    </div>
+    <div class="key rise">
+      <span><i style="background:var(--pink)"></i>Your webinar series</span>
+      <span><i style="background:rgba(51,85,230,.6)"></i>Solus email</span>
+      <span><i style="background:rgba(255,255,255,.16)"></i>Posts and pushes</span>
+      <span><i style="box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)"></i>Strategy and reporting</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEAT BOARD ============ -->
+<section class="sheet sheet--panel" id="sectors">
+  <div class="in">
+    <div class="head rise"><span class="head__n">07</span><div>
+      <h2>One licence per sector. <span class="pink">First signed, first served.</span></h2>
+      <p class="sub">When a firm signs, its sector closes to competitors for the term. Our current partners hold theirs. Four sectors are open for 2027.</p>
+    </div></div>
+    <div class="board rise">
+      <div class="seat seat--taken"><span class="seat__sector">Finance</span><div class="logos"><img src="img/logo-shawbrook.svg" alt="Shawbrook" style="--h:22px"><img src="img/logo-roma-finance.png" alt="Roma Finance" style="--h:34px"></div><span class="seat__state"><i></i>Held</span></div>
+      <div class="seat seat--taken"><span class="seat__sector">Insurance</span><div class="logos"><img src="img/logo-cc-insurance.png" alt="C&amp;C Insurance Brokers" style="--h:40px"></div><span class="seat__state"><i></i>Held</span></div>
+      <div class="seat seat--taken"><span class="seat__sector">Legal</span><div class="logos"><img src="img/logo-taylor-rose.png" alt="Taylor Rose" style="--h:32px"></div><span class="seat__state"><i></i>Held</span></div>
+      <div class="seat seat--taken"><span class="seat__sector">PropTech</span><div class="logos"><img src="img/logo-landstack.svg" alt="Landstack" style="--h:22px"></div><span class="seat__state"><i></i>Held</span></div>
+      <div class="seat seat--taken"><span class="seat__sector">Media</span><div class="logos"><img src="img/logo-blue-bricks.png" alt="Blue Bricks Magazine" style="--h:30px"><img src="img/logo-property-reporter.png" alt="Property Reporter" style="--h:20px"></div><span class="seat__state"><i></i>Held</span></div>
+      <div class="seat seat--open"><span class="seat__sector">Surveying and valuation</span><span class="seat__who"><b>For</b> building surveyors, valuers, QS and party wall practices</span><span class="seat__state"><i></i>Open</span></div>
+      <div class="seat seat--open"><span class="seat__sector">Architecture and design</span><span class="seat__who"><b>For</b> architects, planning consultants and interior design studios</span><span class="seat__state"><i></i>Open</span></div>
+      <div class="seat seat--open"><span class="seat__sector">Accountancy and tax</span><span class="seat__who"><b>For</b> property tax advisers, SPV accountants and allowances specialists</span><span class="seat__state"><i></i>Open</span></div>
+      <div class="seat seat--open"><span class="seat__sector">Construction and building products</span><span class="seat__who"><b>For</b> contractors, manufacturers and product suppliers</span><span class="seat__state"><i></i>Open</span></div>
+      <div class="seat seat--taken" style="background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)"><span class="seat__sector" style="color:var(--body);font-weight:600">Your sector not listed?</span><span class="seat__who small">Talk to Chris. If it does not overlap a held sector, it can be added.</span><span class="seat__state"><i style="background:var(--blue-lite)"></i>Ask</span></div>
+    </div>
+    <div class="board-note rise">
+      <div><b>Claimed on payment.</b>A conversation does not hold a sector. A paid licence does.</div>
+      <div><b>Closed for the term.</b>No competing firm in your sector is offered a licence while yours runs.</div>
+      <div><b>First refusal on renewal.</b>Your sector is offered to you before anyone else at the end of the term.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE ============ -->
+<section class="sheet sheet--glow" id="price">
+  <div class="in">
+    <div class="head rise"><span class="head__n">08</span><div>
+      <h2>One price. <span class="pink">One partner per sector.</span></h2>
+    </div></div>
+    <div class="price">
+      <div class="ticket rise">
+        <span class="tag" style="justify-self:start"><i></i>Gatha Partners Licence 2027</span>
+        <div class="ticket__amt"><b>£5,000</b><span>+ VAT, for twelve months</span></div>
+        <p style="position:relative;z-index:1;max-width:46ch">Under £420 a month for a named webinar series, every new member's first session, the feed, the inbox and the notification bar, with your sector closed to competitors.</p>
+        <div class="terms">
+          <div><b>Twelve months</b><span>From the day payment clears</span></div>
+          <div><b>Invoiced on signature</b><span>Thirty-day payment terms</span></div>
+          <div><b>Sector exclusivity</b><span>Included, for the full term</span></div>
+          <div><b>No extras</b><span>Everything in this pack is in the fee</span></div>
+        </div>
+      </div>
+      <div class="perk rise">
+        <h3>A licence also holds your Gatha LIVE price.</h3>
+        <p>Partners pay 2026 rates at every 2027 Gatha LIVE night. Event places are booked and invoiced separately, and the Exhibitor Pack has the detail.</p>
+        <div class="rate">
+          <div class="rate__row"><span>Exhibitor stand, per event</span><s>£550</s><b>£500 + VAT</b></div>
+          <div class="rate__row"><span>Headline sponsor, per event</span><s>£1,200</s><b>£1,000 + VAT</b></div>
+        </div>
+        <div class="dates">
+          <div><b>Liverpool</b>Thursday 29 April</div>
+          <div><b>Birmingham</b>Thursday 10 June</div>
+          <div><b>London</b>Thursday 9 September</div>
+          <div><b>Leeds</b>Thursday 11 November</div>
+        </div>
+        <p class="small">The event is one night. The platform is all year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="sheet sheet--panel" id="partners">
+  <div class="in">
+    <div class="head rise"><span class="head__n">09</span><div>
+      <h2>In good company. <span class="pink">Ask them how it went.</span></h2>
+    </div></div>
+    <div class="quotes">
+      <div class="quote quote--slot rise">
+        <blockquote>[CONFIRM: quote from Shawbrook, name and title]</blockquote>
+        <cite><img src="img/logo-shawbrook.svg" alt="Shawbrook"><span><b>[Name]</b>[Title], Shawbrook</span></cite>
+      </div>
+      <div class="quote quote--slot rise">
+        <blockquote>[CONFIRM: quote from Roma Finance, name and title]</blockquote>
+        <cite><img src="img/logo-roma-finance.png" alt="Roma Finance" style="height:30px"><span><b>[Name]</b>[Title], Roma Finance</span></cite>
+      </div>
+      <div class="quote quote--slot rise">
+        <blockquote>[CONFIRM: quote from a third partner, name and title]</blockquote>
+        <cite><img src="img/logo-taylor-rose.png" alt="Taylor Rose" style="height:28px"><span><b>[Name]</b>[Title], [Partner]</span></cite>
+      </div>
+    </div>
+    <div class="awards">
+      <div class="award rise"><b>2026</b><h3>Best Property Networking Event of the Year</h3><span class="small">National Property Awards, 18 September 2026</span></div>
+      <div class="award rise"><b>2026</b><h3>Winner, Blue Bricks Awards</h3><span class="small">Titanic Hotel, Liverpool</span></div>
+      <div class="award award--img rise"><img src="img/leeds-2026-crowd.jpg" alt="Members at UK Homes Network LIVE Leeds" width="1400" height="933"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLAIM ============ -->
+<section class="sheet sheet--glow" id="claim">
+  <div class="in">
+    <div class="claim">
+      <div>
+        <div class="head rise"><span class="head__n">10</span><div>
+          <h2>Claim your sector. <span class="pink">Before someone else does.</span></h2>
+        </div></div>
+        <ol class="steps rise">
+          <li><span><b>Call or email Chris.</b>Tell us your sector and we will confirm whether it is still open.</span></li>
+          <li><span><b>Thirty minutes on a call.</b>We agree your series title, your speakers and a first draft of your calendar.</span></li>
+          <li><span><b>Sign and pay.</b>Your sector closes to competitors and onboarding starts in week one.</span></li>
+        </ol>
+      </div>
+      <div class="contact rise">
+        <div class="contact__p"><img src="img/chris-tremlett.jpg" alt="Chris Tremlett" width="800" height="800"><div><b>Chris Tremlett</b><span class="small">Co-founder. You will hear back inside one working day.</span></div></div>
+        <div class="line"><span><small>Email</small>chris@ukhomesnetwork.com</span><button class="copy" type="button" id="copy-email" data-copy="chris@ukhomesnetwork.com">Copy</button></div>
+        <div class="line"><span><small>Phone</small>0121 663 6614</span><button class="copy" type="button" id="copy-phone" data-copy="0121 663 6614">Copy</button></div>
+      </div>
+    </div>
+    <div class="end">
+      <img src="img/gatha-lockup-white.svg" alt="Gatha" width="99" height="30">
+      <span>Gatha is the trading name of UK Homes Network Limited. Registered in England and Wales, company number 15316798. Stubbs Grove, Coventry CV2 3GD. Terms are set out in the Partnership Licence Service Level Agreement issued on signature.</span>
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy'),done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(b.previousElementSibling);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  });
+});
+</script>
