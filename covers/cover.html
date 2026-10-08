@@ -4,6 +4,8 @@
     facebook          820 x 312   (export @2x = 1640 x 624)
     linkedin-company  1128 x 191  (export @1x and @2x)
     linkedin-personal 1584 x 396  (export @1x and @2x)
+    youtube           1280 x 720  (export @2x = 2560 x 1440 channel banner)
+    youtube-icon      400 x 400   (export @2x = 800 x 800 channel profile picture)
   Render with: node render.mjs
   Look and feel follows gatha.uk and the Leeds 2026 backdrop:
   navy #000321 ground, purple ambient light, neon pink floorplan line work
@@ -78,6 +80,24 @@ h1 .dot{color:var(--pink)}
 .linkedin-personal .pill{font-size:15px;padding:9px 18px;margin-top:24px}
 .linkedin-personal .pill i{width:7px;height:7px}
 
+/* ---------- YouTube banner 1280 x 720 (2560 x 1440 at 2x) ----------
+   TV shows everything, desktop a full-width strip y 254-466, phones only the
+   centre 773 x 212 safe area. All type lives inside that safe area. */
+.youtube{width:1280px;height:720px}
+.youtube .content{left:253px;width:774px;top:254px;height:212px;align-items:center;justify-content:center;text-align:center}
+.youtube .lockup{width:150px;margin-bottom:18px}
+.youtube h1{font-size:46px}
+.youtube .sub{font-size:17px;margin-top:12px}
+
+/* ---------- YouTube channel icon 400 x 400 (800 x 800 at 2x), shown as a circle ---------- */
+.youtube-icon{width:400px;height:400px}
+.youtube-icon::before{background:
+  radial-gradient(70% 70% at 50% 50%, rgba(230,43,152,.30), transparent 70%),
+  radial-gradient(90% 90% at 50% 110%, rgba(120,24,150,.6), transparent 70%),
+  linear-gradient(180deg, #000321 0%, #0a0533 100%)}
+.youtube-icon .content{inset:0;align-items:center;justify-content:center}
+.youtube-icon .mark{width:212px;height:auto;filter:drop-shadow(0 0 18px rgba(230,43,152,.55))}
+
 /* safe-zone overlay, only with ?guides=1 */
 .guide{position:absolute;z-index:9;border:2px dashed rgba(0,255,200,.8);pointer-events:none}
 </style>
@@ -100,7 +120,11 @@ const H1 = '<h1>Property has a new home<span class="dot">.</span></h1>';
 const SUB = 'The social media platform built for <strong>UK property</strong>.';
 const PILL = '<span class="pill"><i></i>gatha.uk</span>';
 const content = document.getElementById('content');
-if (f === 'linkedin-company') {
+if (f === 'youtube-icon') {
+  content.innerHTML = '<img class="mark" src="assets/gatha-mark.svg" alt="Gatha">';
+} else if (f === 'youtube') {
+  content.innerHTML = `${LOCKUP}${H1}<p class="sub">${SUB}</p>`;
+} else if (f === 'linkedin-company') {
   content.innerHTML = `${LOCKUP}<span class="rule"></span><div class="text">${H1}<p class="sub">${SUB}</p></div>`;
 } else {
   content.innerHTML = `${LOCKUP}${H1}<p class="sub">${SUB}</p>${PILL}`;
@@ -159,9 +183,11 @@ const SINK = 'M650 74H740V118H650Z';
 const VIEWS = {
   'facebook':          {vb:'120 0 2160 820',  fade:[[0,1],[.22,.85],[.33,0],[.67,0],[.78,.85],[1,1]], op:.62},
   'linkedin-company':  {vb:'0 40 2400 406',   fade:[[0,1],[.16,.9],[.27,0],[.79,0],[.88,.9],[1,1]], op:.6},
+  'youtube':           {vb:'0 -275 2400 1350', fade:[[0,1],[.17,.9],[.27,0],[.73,0],[.83,.9],[1,1]], op:.62},
   'linkedin-personal': {vb:'0 60 2400 600',   fade:[[0,.9],[.24,.9],[.33,0],[.86,0],[.94,.9],[1,1]], op:.6},
 };
 const view = VIEWS[f];
+if (view) {
 const svg = document.getElementById('plan');
 svg.setAttribute('viewBox', view.vb);
 const [, , vbw, vbh] = view.vb.split(' ').map(Number);
@@ -198,6 +224,7 @@ const visW = W / k, visX = vbx + (vbw - visW) / 2;
 const g = svg.querySelector('#fadeG');
 g.setAttribute('gradientUnits', 'userSpaceOnUse');
 g.setAttribute('x1', visX); g.setAttribute('x2', visX + visW);
+}
 
 /* optional safe-zone guides for checking crops */
 if (params.get('guides')) {
@@ -205,9 +232,11 @@ if (params.get('guides')) {
     'facebook': [{l:133,t:0,w:554,h:312,label:'mobile crop'},{l:16,t:232,w:180,h:80,label:'profile photo'}],
     'linkedin-company': [{l:16,t:95,w:128,h:96,label:'logo'}],
     'linkedin-personal': [{l:40,t:200,w:300,h:196,label:'profile photo'}],
+    'youtube': [{l:0,t:254,w:1280,h:212,label:'desktop'},{l:176,t:254,w:928,h:212,label:'tablet'},{l:253,t:254,w:774,h:212,label:'mobile / safe area'}],
+    'youtube-icon': [{l:0,t:0,w:400,h:400,label:'circle crop',r:'50%'}],
   }[f];
   zones.forEach(z => { const d = document.createElement('div'); d.className = 'guide';
-    Object.assign(d.style, {left:z.l+'px', top:z.t+'px', width:z.w+'px', height:z.h+'px'}); cover.appendChild(d); });
+    Object.assign(d.style, {left:z.l+'px', top:z.t+'px', width:z.w+'px', height:z.h+'px', borderRadius:z.r||0}); cover.appendChild(d); });
 }
 document.fonts.ready.then(() => document.body.dataset.ready = '1');
 </script>
