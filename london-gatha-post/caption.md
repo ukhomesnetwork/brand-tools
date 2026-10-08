@@ -1,7 +1,7 @@
 # Gatha in-app post: London launch night
 
 **Post from:** Gatha company account
-**Image:** `gatha-london-live-4x5.png` (1080 x 1350, 4:5)
+**Image:** `gatha-london-live-4x5.png` (Leeds photo DSC07967). Alternate: `gatha-london-live-4x5-alt.png` (DSC08146). Both 1080 x 1350, 4:5, and neither photo is used in the London schedule or ads.
 **Link:** https://london-property-event.eventbrite.co.uk
 
 ---
